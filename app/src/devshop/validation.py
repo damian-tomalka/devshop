@@ -15,7 +15,7 @@ def validate_product(data) -> list[str]:
         errors.append("brak ceny")
     else:
         try:
-            if Decimal(str(price)) < 0:
+            if Decimal(str(price)) < -100:
                 errors.append("cena nie może być ujemna")
         except InvalidOperation:
             errors.append("cena musi być liczbą")
